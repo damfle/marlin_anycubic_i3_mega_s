@@ -24,7 +24,7 @@
 #define CONFIG_EXAMPLES_DIR "AnyCubic/i3 Mega"
 
 #define I3MEGA_HAS_BLTOUCH
-#define I3MEGA_HAS_TMC2208
+#define I3MEGA_HAS_TMC2209
 
 /**
  * Configuration.h
@@ -556,7 +556,7 @@
 #define MAX_BED_POWER 255 // limits duty cycle to bed; 255=full current
 
 #if ENABLED(PIDTEMPBED)
-  //#define MIN_BED_POWER 0
+  //#define MIN_BED_POWER 255
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // Anycubic i3 Mega Ultrabase (0.9Ω @ 22°C)
@@ -636,7 +636,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 600
+#define EXTRUDE_MAXLENGTH 1200
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -745,8 +745,8 @@
  *          TMC5130, TMC5130_STANDALONE, TMC5160, TMC5160_STANDALONE
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
-#if ENABLED(I3MEGA_HAS_TMC2208)
-  #define ALL_DRIVERS_TYPE TMC2208_STANDALONE
+#if ENABLED(I3MEGA_HAS_TMC2209)
+  #define ALL_DRIVERS_TYPE TMC2209_STANDALONE
 #else
   #define ALL_DRIVERS_TYPE A4988
 #endif
@@ -897,7 +897,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
